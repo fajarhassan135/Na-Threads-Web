@@ -2,21 +2,17 @@ import { ArrowRight, Award, Package, MapPin, Clock, Layers } from 'lucide-react'
 import { ThreadPatternBackground, ThreadLines } from './ThreadElements';
 import { useCountUp } from '../hooks/useCountUp';
 
+import sewingThread from '../assets/SEWING THREAD.jpg';
+import drawcord from '../assets/Drawcord.jpg';
+import polyesterThread from '../assets/POLYESTER THREAD.jpg';
+import zips from '../assets/ZIPS.jpg';
+import drawcords from '../assets/Drawcords.jpg';
+import zip from '../assets/zip.jpg';
+import vt3Buttons from '../assets/VT3 BUTTONS.jpg';
+
 const reelImages = [
-  '/src/assets/SEWING THREAD.jpg',
-  '/src/assets/Drawcord.jpg',
-  '/src/assets/POLYESTER THREAD.jpg',
-  '/src/assets/ZIPS.jpg',
-  '/src/assets/Drawcords.jpg',
-  '/src/assets/zip.jpg',
-  '/src/assets/VT3 BUTTONS.jpg',
-  '/src/assets/SEWING THREAD.jpg',
-  '/src/assets/Drawcord.jpg',
-  '/src/assets/POLYESTER THREAD.jpg',
-  '/src/assets/ZIPS.jpg',
-  '/src/assets/Drawcords.jpg',
-  '/src/assets/zip.jpg',
-  '/src/assets/VT3 BUTTONS.jpg',
+  sewingThread, drawcord, polyesterThread, zips, drawcords, zip, vt3Buttons,
+  sewingThread, drawcord, polyesterThread, zips, drawcords, zip, vt3Buttons,
 ];
 
 interface StatCardProps {
@@ -66,9 +62,9 @@ export default function Hero() {
         </div>
 
         <div className="container mx-auto px-8 lg:px-16 pt-2 pb-8 relative">
-          <div className="grid lg:grid-cols-3 gap-12 items-center min-h-[85vh]">
+          <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[85vh]">
 
-            {/* Col 1 - Title */}
+            {/* Left - Title */}
             <div className="text-center lg:text-left">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-8 bg-gradient-to-r from-[#0C1C27] via-[#1a2f3d] to-[#0C1C27] bg-clip-text text-transparent">
                 <span className="block">NA THREADS</span>
@@ -85,10 +81,7 @@ export default function Hero() {
               </a>
             </div>
 
-            {/* Col 2 - Empty spacer */}
-            <div className="hidden lg:block" />
-
-            {/* Col 3 - Stats */}
+            {/* Right - Stats */}
             <div className="flex flex-col justify-center w-full space-y-4">
               <p className="text-xs font-semibold text-slate-400 tracking-widest text-center lg:text-left mb-1">
                 BY THE NUMBERS
@@ -111,7 +104,6 @@ export default function Hero() {
                 accent
               />
             </div>
-
           </div>
 
           <style>{`
@@ -168,7 +160,7 @@ export default function Hero() {
               </div>
               <h3 className="text-xl font-bold text-[#0C1C27] mb-3">Sustainability</h3>
               <p className="text-sm text-slate-600 leading-relaxed">
-                We believe in responsible manufacturing. Our eco-friendly practices include sustainable raw materials, low-impact dyeing processes, and waste reduction strategies. Sustainability isn't a choice for us — it's a commitment.
+                We believe in responsible manufacturing. Our eco-friendly practices include sustainable raw materials, low-impact dyeing processes, and waste reduction strategies. Sustainability is not a choice for us, it is a commitment.
               </p>
             </div>
 
