@@ -2,13 +2,13 @@ import { ArrowRight, Award, Package, MapPin, Clock, Layers } from 'lucide-react'
 import { ThreadPatternBackground, ThreadLines } from './ThreadElements';
 import { useCountUp } from '../hooks/useCountUp';
 
-import sewingThread from '../assets/SEWING-THREAD.jpg';
+import sewingThread from '../assets/SEWING THREAD.jpg';
 import drawcord from '../assets/Drawcord.jpg';
-import polyesterThread from '../assets/POLYESTER-THREAD.jpg';
+import polyesterThread from '../assets/POLYESTER THREAD.jpg';
 import zips from '../assets/ZIPS.jpg';
 import drawcords from '../assets/Drawcords.jpg';
 import zip from '../assets/zip.jpg';
-import vt3Buttons from '../assets/VT3-BUTTONS.jpg';
+import vt3Buttons from '../assets/VT3 BUTTONS.jpg';
 
 const reelImages = [
   sewingThread, drawcord, polyesterThread, zips, drawcords, zip, vt3Buttons,
@@ -25,7 +25,11 @@ interface StatCardProps {
 function StatCard({ icon, value, label, accent = false }: StatCardProps) {
   return (
     <div
-      className="relative flex items-center gap-4 rounded-xl px-5 py-4 border transition-all duration-300 hover:-translate-y-1 hover:shadow-lg bg-gradient-to-br from-[#D4AF37]/10 to-[#B8941F]/5 border-[#D4AF37]/40"
+      className={`relative flex items-center gap-4 rounded-xl px-5 py-4 border transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${
+        accent
+          ? 'bg-gradient-to-br from-[#D4AF37]/10 to-[#B8941F]/5 border-[#D4AF37]/40'
+          : 'bg-white border-slate-200'
+      }`}
     >
       <div className="absolute left-0 top-4 bottom-4 w-1 rounded-full bg-gradient-to-b from-[#D4AF37] to-[#B8941F]" />
       <div className="w-11 h-11 rounded-lg bg-gradient-to-br from-[#D4AF37] to-[#B8941F] flex items-center justify-center shadow-md flex-shrink-0">
