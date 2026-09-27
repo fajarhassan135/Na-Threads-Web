@@ -2,7 +2,6 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { fileURLToPath, URL } from 'node:url'
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
   resolve: {
@@ -14,7 +13,9 @@ export default defineConfig({
     postcss: './postcss.config.js'
   },
   build: {
-    // Optimize chunk splitting
+    minify: 'esbuild',
+    assetsInlineLimit: 0,
+    chunkSizeWarningLimit: 1000,
     rollupOptions: {
       output: {
         manualChunks: {
@@ -24,28 +25,18 @@ export default defineConfig({
         }
       }
     },
-    // Enable minification (using esbuild - faster and built-in)
-    minify: 'esbuild',
-    // Remove console.log in production
     esbuild: {
       drop: ['console', 'debugger']
-    },
-    // Optimize chunk size
-    chunkSizeWarningLimit: 1000
+    }
   },
-  // Optimize asset handling
-  assetsInclude: ['**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.svg'],
-  assetsInlineLimit: 4096, // Inline small images as base64
-  // Enable faster HMR
+  assetsInclude: ['**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.svg', '**/*.webp'],
   server: {
     hmr: {
       overlay: false
     }
   },
-  // Optimize dependencies
   optimizeDeps: {
     include: ['react', 'react-dom', 'lucide-react'],
-    // Pre-bundle optimization
     esbuildOptions: {
       target: 'es2020'
     }

@@ -1,4 +1,5 @@
 import { ArrowRight, Award, Package, MapPin, Clock, Layers } from 'lucide-react';
+import { useState, useCallback } from 'react';
 import { ThreadPatternBackground, ThreadLines } from './ThreadElements';
 import { useCountUp } from '../hooks/useCountUp';
 
@@ -25,11 +26,7 @@ interface StatCardProps {
 function StatCard({ icon, value, label, accent = false }: StatCardProps) {
   return (
     <div
-      className={`relative flex items-center gap-4 rounded-xl px-5 py-4 border transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${
-        accent
-          ? 'bg-gradient-to-br from-[#D4AF37]/10 to-[#B8941F]/5 border-[#D4AF37]/40'
-          : 'bg-white border-slate-200'
-      }`}
+      className="relative flex items-center gap-4 rounded-xl px-5 py-4 border transition-all duration-300 hover:-translate-y-1 hover:shadow-lg bg-gradient-to-br from-[#D4AF37]/10 to-[#B8941F]/5 border-[#D4AF37]/40"
     >
       <div className="absolute left-0 top-4 bottom-4 w-1 rounded-full bg-gradient-to-b from-[#D4AF37] to-[#B8941F]" />
       <div className="w-11 h-11 rounded-lg bg-gradient-to-br from-[#D4AF37] to-[#B8941F] flex items-center justify-center shadow-md flex-shrink-0">
@@ -49,6 +46,10 @@ export default function Hero() {
   const citiesCount = useCountUp({ end: 5, duration: 5000 });
   const yearsCount = useCountUp({ end: 30, duration: 5000 });
   const conesCount = useCountUp({ end: 1800000, duration: 5000 });
+  const [loadedCount, setLoadedCount] = useState(0);
+  const totalImages = 7;
+  const allLoaded = loadedCount >= totalImages;
+  const handleImageLoad = useCallback(() => setLoadedCount(c => c + 1), []);
 
   return (
     <>
@@ -114,13 +115,15 @@ export default function Hero() {
             .reel-track {
               display: flex;
               width: max-content;
+            }
+            .reel-track.animate {
               animation: marquee 20s linear infinite;
             }
           `}</style>
 
           <div className="mb-16 -mx-8 lg:-mx-16">
             <div style={{ overflow: 'hidden', boxShadow: '0 4px 24px rgba(0,0,0,0.10)' }}>
-              <div className="reel-track">
+              <div className={`reel-track${allLoaded ? " animate" : ""}`}>
                 {reelImages.map((src, i) => (
                   <img
                     key={i}
@@ -128,6 +131,7 @@ export default function Hero() {
                     alt=""
                     style={{ width: '224px', height: '200px', objectFit: 'cover', display: 'block', flexShrink: 0 }}
                     loading="eager"
+                    onLoad={i < 7 ? handleImageLoad : undefined}
                   />
                 ))}
               </div>
