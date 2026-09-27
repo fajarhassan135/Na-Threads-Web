@@ -2,13 +2,13 @@ import { ArrowRight, Award, Package, MapPin, Clock, Layers } from 'lucide-react'
 import { ThreadPatternBackground, ThreadLines } from './ThreadElements';
 import { useCountUp } from '../hooks/useCountUp';
 
-import sewingThread from '../assets/SEWING THREAD.jpg';
+import sewingThread from '../assets/SEWING-THREAD.jpg';
 import drawcord from '../assets/Drawcord.jpg';
-import polyesterThread from '../assets/POLYESTER THREAD.jpg';
+import polyesterThread from '../assets/POLYESTER-THREAD.jpg';
 import zips from '../assets/ZIPS.jpg';
 import drawcords from '../assets/Drawcords.jpg';
 import zip from '../assets/zip.jpg';
-import vt3Buttons from '../assets/VT3 BUTTONS.jpg';
+import vt3Buttons from '../assets/VT3-BUTTONS.jpg';
 
 const reelImages = [
   sewingThread, drawcord, polyesterThread, zips, drawcords, zip, vt3Buttons,
