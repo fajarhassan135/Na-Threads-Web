@@ -3,17 +3,16 @@ import { useState, useCallback } from 'react';
 import { ThreadPatternBackground, ThreadLines } from './ThreadElements';
 import { useCountUp } from '../hooks/useCountUp';
 
-import sewingThread from '../assets/SEWING-THREAD.jpg';
-import drawcord from '../assets/Drawcord.jpg';
-import polyesterThread from '../assets/POLYESTER-THREAD.jpg';
-import zips from '../assets/ZIPS.jpg';
-import drawcords from '../assets/Drawcords.jpg';
-import zip from '../assets/zip.jpg';
-import vt3Buttons from '../assets/VT3-BUTTONS.jpg';
+import drawcord from '../assets/drawcord.webp';
+import drawcords from '../assets/drawcords.webp';
+import zip from '../assets/zip.webp';
+import zips from '../assets/zips.webp';
+import thread1 from '../assets/thread1.webp';
+import thread2 from '../assets/thread 2.webp';
 
 const reelImages = [
-  sewingThread, drawcord, polyesterThread, zips, drawcords, zip, vt3Buttons,
-  sewingThread, drawcord, polyesterThread, zips, drawcords, zip, vt3Buttons,
+  drawcord, drawcords, zip, zips, thread1, thread2,
+  drawcord, drawcords, zip, zips, thread1, thread2,
 ];
 
 interface StatCardProps {
@@ -47,7 +46,7 @@ export default function Hero() {
   const yearsCount = useCountUp({ end: 30, duration: 5000 });
   const conesCount = useCountUp({ end: 1800000, duration: 5000 });
   const [loadedCount, setLoadedCount] = useState(0);
-  const totalImages = 7;
+  const totalImages = 6;
   const allLoaded = loadedCount >= totalImages;
   const handleImageLoad = useCallback(() => setLoadedCount(c => c + 1), []);
 

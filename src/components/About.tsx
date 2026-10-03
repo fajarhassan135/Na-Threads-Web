@@ -6,19 +6,19 @@ import { missionData, coreValuesData } from './data/constants';
 const leaders = [
   {
     name: 'Najam Ul Hassan Warriach',
-    title: 'Chief Executive Officer',
+    title: 'Founder',
     gradient: 'from-[#D4AF37] to-[#B8941F]',
     badgeBg: 'bg-[#D4AF37]',
     icon: <Users className="w-10 h-10 text-white" />,
-    bio: 'With over 30 years of experience in Pakistan\'s textile industry, Najam Ul Hassan Warriach founded NA Threads Manufacturing Industry with a vision to set new benchmarks in thread quality and manufacturing excellence. Under his leadership, the company has grown into one of Pakistan\'s most trusted thread manufacturers, serving clients across Faisalabad, Lahore, Karachi, Multan, Sialkot, and Peshawar. He drives the company\'s strategic direction, client relationships, and long-term growth with an unwavering commitment to quality and customer satisfaction.',
-    expertise: ['Strategic Leadership', 'Business Development', 'Textile Industry', 'Client Relations'],
+    bio: 'With over 30 years of experience in Pakistan\'s textile industry, Najam Ul Hassan Warriach founded NA Threads Manufacturing Industry with a vision to set new benchmarks in thread quality and manufacturing excellence. His entrepreneurial spirit and deep industry knowledge laid the foundation for what has grown into one of Pakistan\'s most trusted thread manufacturers, serving clients across Faisalabad, Lahore, Karachi, Multan, Sialkot, and Peshawar.',
+    expertise: ['Entrepreneurship', 'Textile Industry', 'Business Founding', 'Strategic Vision'],
     socials: [
       { label: 'LinkedIn', url: 'https://www.linkedin.com/in/na-threads', icon: 'linkedin' },
     ]
   },
   {
     name: 'Abdullah Hassan Warriach',
-    title: 'Chief Operating Officer',
+    title: 'Chief Executive Officer',
     gradient: 'from-[#0C1C27] to-[#1a2f3d]',
     badgeBg: 'bg-[#0C1C27]',
     icon: <Target className="w-10 h-10 text-white" />,
@@ -150,7 +150,7 @@ export default function About() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-[#0C1C27] mb-6">
-              Message from Our <span className="text-[#D4AF37]">CEO</span>
+              Message from Our <span className="text-[#D4AF37]">Founder</span>
             </h2>
             <div className="relative">
               <Quote className="absolute -top-4 -left-4 w-12 h-12 text-[#D4AF37]/20" />
