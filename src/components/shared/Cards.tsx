@@ -27,7 +27,7 @@ interface ServiceCardProps {
 }
 
 export const ServiceCard = React.memo(({ service }: ServiceCardProps) => (
-  <div className="group relative bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-200 overflow-hidden hover:-translate-y-2 will-change-transform">
+  <div className="group relative bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-200 overflow-hidden hover:-translate-y-2 will-change-transform hover:bg-[#0C1C27]">
     <div className="p-8">
       <div className="relative mb-6 flex justify-center">
         <div className={`inline-flex p-4 rounded-lg bg-gradient-to-r ${service.bgColor} text-white shadow-lg group-hover:scale-110 transition-transform duration-300 will-change-transform`}>
@@ -37,7 +37,7 @@ export const ServiceCard = React.memo(({ service }: ServiceCardProps) => (
       <h3 className="text-xl font-bold text-[#0C1C27] mb-4 text-center group-hover:text-[#D4AF37] transition-colors duration-300">
         {service.title}
       </h3>
-      <p className="text-slate-600 leading-relaxed text-center">
+      <p className="text-slate-600 leading-relaxed text-center group-hover:text-white/80 transition-colors duration-300">
         {service.description}
       </p>
     </div>
@@ -56,7 +56,6 @@ interface ContactCardProps {
 function getDetailLink(title: string, detail: string) {
   if (title === 'Phone Number') {
     const digits = detail.replace(/\s+/g, '');
-    // WhatsApp link — opens WhatsApp or falls back to call
     return `https://wa.me/${digits.replace('+', '')}`;
   }
   if (title === 'Email Address') {
