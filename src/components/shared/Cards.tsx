@@ -55,11 +55,11 @@ interface ContactCardProps {
 
 function getDetailLink(title: string, detail: string) {
   if (title === 'Phone Number') {
-    const digits = detail.replace(/\s+/g, '');
-    return `https://wa.me/${digits.replace('+', '')}`;
+    const digits = detail.replace(/[\s+\-]/g, '');
+    return `https://api.whatsapp.com/send?phone=${digits}`;
   }
   if (title === 'Email Address') {
-    return `mailto:${detail}`;
+    return `https://mail.google.com/mail/?view=cm&to=${detail}`;
   }
   if (title === 'Our Location') {
     return `https://maps.google.com/?q=Sattar+Square+Motor+Market+Faisalabad+Pakistan`;
