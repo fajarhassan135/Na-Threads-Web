@@ -74,26 +74,26 @@ export const divisionsData = [
 export const productsData = [
   {
     name: "Drawcords",
-    image1: "/images/products/drawcord.png",
-    image2: "/images/products/drawcords.png",
+    image1: "/images/products/drawcord.webp",
+    image2: "/images/products/drawcords.webp",
     description: "High-quality drawcords for clothing and accessories"
   },
   {
     name: "Zips",
-    image1: "/images/products/zip.png",
-    image2: "/images/products/zips.png",
+    image1: "/images/products/zip.webp",
+    image2: "/images/products/zips.webp",
     description: "Durable zippers for various textile applications"
   },
   {
     name: "VT3 Buttons",
-    image1: "/images/products/buttons.png",
-    image2: "/images/products/button.png",
+    image1: "/images/products/buttons.webp",
+    image2: "/images/products/button.webp",
     description: "Premium VT3 buttons for professional garment finishing"
   },
   {
     name: "Sewing Threads",
-    image1: "/images/products/thread1.jpg",
-    image2: "/images/products/thread 2.jpg",
+    image1: "/images/products/thread1.webp",
+    image2: "/images/products/thread 2.webp",
     description: "High-strength sewing threads for all textile needs"
   }
 ];
